@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proxy Manager</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Proxy Manager</h2>
+        
+        <div class="status-board">
+            <div class="status-left">
+                <span id="status-indicator" class="indicator offline"></span>
+                <span id="status-text">Disconnected</span>
+            </div>
+            <div class="status-right">
+                <span id="ping-result">-- ms</span>
+                <button id="btn-ping" class="icon-btn" title="Refresh Ping">↻</button>
+            </div>
+        </div>
+
+        <div class="input-group row-flex">
+            <select id="saved-proxies" class="flex-grow">
+                <option value="">-- Saved Profiles --</option>
+            </select>
+            <button id="btn-delete" class="icon-btn danger" title="Delete Profile">✕</button>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="profile-name" placeholder="Profile Name (e.g., My Server)">
+        </div>
+
+        <div class="input-group">
+            <select id="scheme">
+                <option value="socks5">Protocol: SOCKS5</option>
+                <option value="socks4">Protocol: SOCKS4</option>
+                <option value="http">Protocol: HTTP</option>
+                <option value="https">Protocol: HTTPS</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="input-group host-group">
+                <input type="text" id="host" placeholder="Server IP / Host">
+            </div>
+            <div class="input-group port-group">
+                <input type="number" id="port" placeholder="Port">
+            </div>
+        </div>
+
+        <div class="presets-bar">
+            <span class="preset-badge" data-target="host" data-value="127.0.0.1">Localhost</span>
+            <span class="preset-badge" data-target="host" data-value="192.168.43.1">Android Hotspot</span>
+            <span class="preset-badge" data-target="host" data-value="192.168.1.">192.168.1.x</span>
+            <span class="preset-badge" data-target="port" data-value="10808">10808</span>
+            <span class="preset-badge" data-target="port" data-value="10809">10809</span>
+        </div>
+
+        <div class="auth-toggle" id="auth-toggle">
+            <span>► Authentication (Optional)</span>
+        </div>
+        
+        <div class="auth-fields" id="auth-fields">
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button id="btn-connect" class="btn primary">Connect</button>
+            <button id="btn-disconnect" class="btn secondary">Disconnect</button>
+        </div>
+        
+        <button id="btn-save" class="btn outline">Save as New Profile</button>
+
+        <div class="footer-links">
+            <a href="https://t.me/archivetell" target="_blank" title="Join ArchiveTell">📢 @ArchiveTell</a>
+            <span class="separator">•</span>
+            <a href="https://t.me/Bachedev" target="_blank" title="Developer Contact">👨‍💻 @Bachedev</a>
+            <span class="separator">•</span>
+            <a href="https://github.com/johncarterjourney-rgb" target="_blank" title="GitHub Profile">🐙 GitHub</a>
+        </div>
+        
+        <div class="footer-signature">
+            𝔹𝕒𝕔𝕙𝕖𝕝𝕠𝕣⚡️
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
